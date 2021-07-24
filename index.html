@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="brand">CODEWithme</a>
+        <div class="menu-btn "></div>
+        <!-- <div class="menu-btn active"><i class='bx bx-window-close'></i></div> -->
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contacat</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="videos/avenger.m4v" autoplay muted loop  playsinline style="pointer-events: none;"></video>
+        <video class="video-slide " src="videos/avenger1.m4v " autoplay muted loop  playsinline style="pointer-events: none;"></video>
+        <video class="video-slide " src="videos/avenger2.mp4" autoplay muted loop  playsinline style="pointer-events: none;"></video>
+        <div class="content active">
+            <h1>Marvel's Avengers <br><span> Black Panther </span> </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro enim dolorem sint dolor et nostrum
+                doloremque cum blanditiis veniam? Doloremque officia dicta voluptates ea aperiam deleniti, ullam
+                exercitationem aspernatur consectetur?</p>
+            <!-- <a href="#">Read More</a> -->
+        </div>
+        <div class="content">
+            <h1>AVENGERS<br><span>Black Panther </span> </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro enim dolorem sint dolor et nostrum
+                doloremque cum blanditiis veniam? Doloremque officia dicta voluptates ea aperiam deleniti, ullam
+                exercitationem aspernatur consectetur?</p>
+            <!-- <a href="#">Read More</a> -->
+        </div>
+        <div class="content">
+            <h1>AVENGERS<br><span>Black Panther</span> </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro enim dolorem sint dolor et nostrum
+                doloremque cum blanditiis veniam? Doloremque officia dicta voluptates ea aperiam deleniti, ullam
+                exercitationem aspernatur consectetur?</p>
+             <!-- <a href="#">Read More</a> -->
+        </div>
+        <div class="media-icon">
+            <a href="#"><i class='bx bxl-facebook-circle'></i></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt'></i></i></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></i></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <!-- <div class="nav-btn"></div>  -->
+        </div>
+    </section>
+
+    <script class="text/javascript">
+            
+            const menuBtn = document.querySelector(".menu-btn");
+            const navigation = document.querySelector(".navigation");
+
+             menuBtn.addEventListener("click", () => {
+                 menuBtn.classList.toggle("active");
+                 navigation.classList.toggle("active");
+             });
+
+
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+
+
+        /* play video twice as fast */
+
+        document.querySelector('video').defaultPlaybackRate = 2.0;
+        document.querySelector('video').play();
+
+
+        /* now play three times as fast just for the heck of it */
+        document.querySelector('video').playbackRate = 2.5;
+
+         
+    </script>
+</body>
+
+</html>
